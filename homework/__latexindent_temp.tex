@@ -1,0 +1,68 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{amsmath}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S1.2)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\begin{document}
+
+\newenvironment{amatrix}[1]{%
+  \left[\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right]
+}
+
+\newenvironment{augmatrix}[1]{%
+  \left[\begin{array}{#1}
+}{%
+  \end{array}\right]
+}
+
+\S1.2
+\problemnumber{1}
+\begin{problem}
+    A pipe maker company produces 3ft and 5ft lengths of pipes. 
+    These pieces can be glued together to get longer pipes. 
+    Prove that any integer length of at least 8ft can be 
+    made out of these pipes.
+\end{problem}
+\begin{solution}
+    In other words we need to prove that the following equation
+    has positive solutions for all $c \ge 8$:
+    $$3a + 5b = c$$
+    Let $P(c)$ be the statement that the last statement is true for
+    a given $c$.\\
+
+    \textbf{basis step:} $P(8)$ holds true, since $a=1, b=1$ 
+    are the positive solutions.\\
+
+    \textbf{induction step:} Let's assume $P(k)$ holds for an arbitrary
+    $k>8$. I.e., $\exists a,b: a\ge{0},b\ge{0}$ and
+    $$k=3a+5b$$
+    Three cases arise while considering the quantity $k+1$:
+    \begin{enumerate}
+        \item[Case I] 
+        \begin{align*}
+            a\ge{1}, b\ge{1} 
+                \implies k+1 = 3a + 5b + 1 
+                = 3a + 5(b-1) + 6
+                = 3(a+2) + 5(b-1)
+        \end{align*}
+
+        \item[Case II] $a=0, b\ge{1} 
+        \implies k+1 = 5b + 1 
+        = 5(b-1) + 6
+        = 3(2) + 5(b-1)$
+
+        \item[Case III] $a\ge{1}, b=0 
+        \implies k+1 = 5b + 1 
+        = 5(b-1) + 6
+        = 3(2) + 5(b-1)$
+    \end{enumerate}
+    
+\end{solution}
+\end{document}

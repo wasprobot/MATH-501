@@ -1,0 +1,76 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{amsmath}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S1.2)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\begin{document}
+
+\newenvironment{amatrix}[1]{%
+  \left[\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right]
+}
+
+\newenvironment{augmatrix}[1]{%
+  \left[\begin{array}{#1}
+}{%
+  \end{array}\right]
+}
+
+\S1.2
+\problemnumber{1}
+\begin{problem}
+    A pipe maker company produces 3ft and 5ft lengths of pipes. 
+    These pieces can be glued together to get longer pipes. 
+    Prove that any integer length of at least 8ft can be 
+    made out of these pipes.
+\end{problem}
+\begin{solution}
+    \textbf{\textit{To prove:}} In other words we need to prove that the equation
+    $3a + 5b = c$
+    has positive solutions for all $c \ge 8$.\\
+
+    \textbf{\textit{Basis step:}} Let $P(c)$ be the statement that the last statement is true for
+    a given $c$. $P(8)$ holds true, since $a=1, b=1$ 
+    are the positive solutions.\\
+
+    \textbf{\textit{Induction step:}} Let's assume $P(k)$ holds for an arbitrary
+    $k>8$. I.e., 
+    $\exists a,b
+    : a\ge{0},b\ge{0}
+    : k=3a+5b$
+
+    \begin{enumerate}
+        \item[Case I] Both $a$ and $b$ are greater than zero.
+        \begin{align*}
+            \therefore k+1 &= 3a + 5b + 1 \\
+            & = 3a + 5(b-1) + 6 \\
+            & = 3(a+2) + 5(b-1)
+        \end{align*}
+        \item[Case II] $a=0$ and $b$ is greater than zero.
+        \begin{align*}
+            \therefore k+1 &= 5b + 1 \\
+            & = 5(b-1) + 6 \\
+            & = 3(2) + 5(b-1)
+        \end{align*}
+        \item[Case III] $a$ is greater than zero and $b=0$. 
+        But this is only possible if
+        $a\ge{3}$ since $k\ge{8}$.
+        \begin{align*}
+            \therefore k+1 &= 3a + 1 \\
+            & = 3(a-3) + 1 \\
+            & = 3(a-3) + 10\\
+            & = 3(a-3) + 5(2)\\
+        \end{align*}
+    \end{enumerate}
+    All the possible casese suggest that if $P(k)$ is true,
+    $P(k+1)$ is true $\forall{k}\ge{8}\in{\mathbb{N}}$.
+    I.e., any integer length $\ge{8}$ can be made out of
+    these pipes.
+\end{solution}
+\end{document}

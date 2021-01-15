@@ -32,8 +32,17 @@
 \begin{solution}
   $A_0=\{\phi\}$, and has $1$ element. It is therefore \textit{countable}.\\
   $A_1=\{\{1\},\{2\},\dots\}$. There seems to be a surjection from $\mathbb{N}$
-  onto $A_1$. Since $\mathbb{N}$ is countable, $A_1$ is too.\\
+  onto $A_1$. Since $\mathbb{N}$ is \textit{countable}, so is $A_1$.\\
   $A_2$ is nothing but $\mathbb{N}\times\mathbb{N}$ and can be shown as 
-  \textit{countable} with a 2-D "diagonal procedure".
+  \textit{countable} with the "diagonal procedure".\\
+  The higher sets $A_3,A_4,\dots$ can be shown as
+  cross products of the previous set with $A_1$ 
+  e.g., $A_3=A_2\times{A_1}$, $A_4=A_3\times{A1}$ and so on.
+  Since the cross product of $2$ countable sets is also countable,
+  all higher $A_i$ are \textit{countable}.\\
+
+  In the end, $B=\bigcup_{i=0}^{\infty}A_i$ being a union
+  of all countable sets, is also \textit{countable} because
+  intuitively it is just an additive process of counting.
 \end{solution}
 \end{document}

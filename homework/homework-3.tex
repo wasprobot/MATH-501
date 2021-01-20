@@ -1,0 +1,51 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{amsmath}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S2.1)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\begin{document}
+
+\newenvironment{amatrix}[1]{%
+  \left[\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right]
+}
+
+\newenvironment{augmatrix}[1]{%
+  \left[\begin{array}{#1}
+}{%
+  \end{array}\right]
+}
+
+\begin{problem}Page 27, in the proof of Theorem 2.1.8: 
+  "then $a^2=(-a)(-a)$". So why is that?
+\end{problem}
+\begin{solution}We can take the R.H.S. 
+  \begin{align*}
+      (-a)(-a)\\
+      & = ((-1)\cdot{a})\cdot{((-1)\cdot{a})}
+      & \text{(by definition of negative numbers)}\\
+      & = (-1\cdot{-1)}\cdot{(a\cdot{a})}
+      & \text{(by associative property of multiplication)}\\
+      & = ???
+  \end{align*}
+\end{solution}
+\begin{problem}Page 28, in the proof of Theorem 2.1.10: 
+  "If $a>0$, then $1/a>0$." Why is this true?
+\end{problem}
+\begin{solution}Assuming the contrary, there are 2 cases (Trichotomy Property).
+  In the first case, $1/a=0$. Hence $a\cdot 1/a = 0$, by \textit{existence of the zero element}.
+  But $a\cdot{1/a} = 1$ by \textit{definition of the reciprical}.\\
+
+  In the remaining case, $-(1/a) > 0 \implies -1\cdot{1/a} > 0$. Also by hypothesis
+  $a>0$. According to the multiplicative closure of $\mathbb{P}$, we have
+  $a\cdot{-1}\cdot{1/a} > 0$ or $(a\cdot{1/a})\cdot{-1} > 0$ 
+  (\textit{cummutative prop. of multiplication}). I.e., $1\cdot{-1} = -1 > 0$
+  which is not true by the definition of $-1$ rendering our assumption incorrect.
+\end{solution}
+\end{document}

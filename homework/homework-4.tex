@@ -1,0 +1,52 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{amsmath}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S2.2)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\begin{document}
+
+\newenvironment{amatrix}[1]{%
+  \left[\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right]
+}
+
+\newenvironment{augmatrix}[1]{%
+  \left[\begin{array}{#1}
+}{%
+  \end{array}\right]
+}
+
+\begin{problem}Let $A$ be $\epsilon$-neighborhood of $a$, and let $B$ be the 
+  $\epsilon$-neighborhood of $b$. Show that if $A$ and $B$ are not disjoint, 
+  then their intersection is the $\epsilon$-neighborhood of a real number.
+\end{problem}
+\begin{solution}From definition, $A=\{x\in{\mathbb{R}}:|x-a|<\epsilon\}$
+  and $B=\{x\in{\mathbb{R}}:|x-b|<\epsilon\}, \epsilon > 0$. Their intersection,
+  $C = A\cap{B}$ is the set of $x\in{\mathbb{R}}$ such that:
+  \begin{equation}
+    |x-a|<\epsilon, |x-b|<\epsilon
+  \end{equation}
+  
+  Now take $|(x+x)-(a+b)| = |(x-a) + (x-b)|$
+  which according to the Triangular Inequality
+  \begin{align*}
+    & \le |x-a| + |x-b| \\
+    & < 2\epsilon 
+      & \text{(using 1.1)}\\
+    \therefore |2x-(a+b)| & < 2\epsilon\\
+    |x-\frac{a+b}{2}| & < \epsilon 
+      & \text{(dividing both sides by $2$)}
+  \end{align*}
+  
+  $C = \{x\in\mathbb{R}: |x-\frac{a+b}{2}| < \epsilon \}$,\\
+
+  This is the $\epsilon$-neighborhood of 
+  $\frac{a+b}{2}$, a real number.
+\end{solution}
+\end{document}

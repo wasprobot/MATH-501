@@ -1,0 +1,41 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{amsmath}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S2.3)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\begin{document}
+
+\newenvironment{amatrix}[1]{%
+  \left[\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right]
+}
+
+\newenvironment{augmatrix}[1]{%
+  \left[\begin{array}{#1}
+}{%
+  \end{array}\right]
+}
+
+\begin{problem}Is it possible to have two sets of real numbers, $A$ and $B$, such that
+  $A \subset B$, $sup\ {A} = sup\ {B}$ and $inf\ {A} = inf\ {B}$?
+\end{problem}
+\begin{solution}We shall see how this is \textbf{not possible}.
+  Let $u = sup \ {B}, w = inf\ {B}$. 
+  Since $A$ is a proper subset of $B$,
+  there exists at least one $b\in{B}$ not in $A$.
+
+  It is possible that $b>$ the \textit{upper bound} of $A$
+  (as we're told $sup\ A$ exists). Then by definition,
+  \textbf{upper bound} of A $ < b \le u \implies u \ne sup\ A$.
+  
+  The only other case is if $b<$ the \textit{lower bound} of $A$
+  (again since $inf\ A$ exists), 
+  $w \ge b > $ \textbf{lower bound} of $A \implies w \ne inf\ A$.
+\end{solution}
+\end{document}

@@ -1,0 +1,93 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{amsmath}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S2.1)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\begin{document}
+
+\newenvironment{amatrix}[1]{%
+  \left[\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right]
+}
+
+\newenvironment{augmatrix}[1]{%
+  \left[\begin{array}{#1}
+}{%
+  \end{array}\right]
+}
+\problemnumber{9}
+\begin{problem}Let $K:=\{s+t\sqrt{2}:s,t\in{\mathbb{Q}}\}$.
+  Show that $K$ satisfies the following:
+\end{problem}
+\begin{solution}
+  a) $x_1,x_2\in{K} \implies x_1+x_2\in{K},x_1x_2\in{K}$:\\
+  
+  Let's prove \textbf{closure of addition} on $\mathbb{Q}$: 
+  if $s,t\in\mathbb{Q}$ there exist $s_n,s_d,t_n,t_d\in\mathbb{R}$
+  such that $s=s_n/s_d, t=t_n/t_d$. Therefore $s+t$
+  \begin{align*}
+    &= \frac{s_n}{s_d} + \frac{t_n}{t_d}\\
+    &= \frac{s_nt_d}{s_dt_d} + \frac{t_ns_d}{s_dt_d}\\
+    &= \frac{1}{s_dt_d} (s_nt_d+ t_ns_d)
+      & \text{($s_dt_d,s_nt_d,t_ns_d\in\mathbb{R}$; Distributive)}\\
+    &= \frac{r}{s_dt_d} 
+      & \text{($r=s_nt_d+ t_ns_d$)}\\
+    & \in \mathbb{Q}
+  \end{align*}
+  Similarly for \textbf{closure on multiplication} $st$
+  \begin{align*}
+    &= \frac{s_n}{s_d} \frac{t_n}{t_d}\\
+    &= \frac{s_ns_d}{t_nt_d}
+    & \text{(closure on multiplication in $\mathbb{R}$)}\\
+    & \in \mathbb{Q}
+  \end{align*}
+  We can now write $x_1+x_2$
+  \begin{align*}
+    &= s_1+t_1\sqrt{2} +s_2+t_2\sqrt{2}
+      :s,t\in \mathbb{Q}\\
+    &= (s_1+s_2) + (t_1+t_2)\sqrt{2}
+      & \text{($\mathbb{Q}\subset\mathbb{R}$; Associativity of addition)}\\
+    &= u+v\sqrt{2}, u,v\in\mathbb{Q}
+      & \text{(closure in $\mathbb{Q}$ from above)}\\
+    & \in{K}
+  \end{align*}
+  Similarly $x_1x_2$
+  \begin{align*}
+    &= (s_1+t_1\sqrt{2})(s_2+t_2\sqrt{2})\\
+    &= s_1(s_2+t_2\sqrt{2}) + t_1\sqrt{2}(s_2+t_2\sqrt{2})
+      & \text{(Distributive on $\mathbb{R}$)}\\
+    &= s_1s_2 + s_1t_2\sqrt{2} + t_1\sqrt{2}(s_2+t_2\sqrt{2})
+      & \text{(Distributive on $\mathbb{R}$)}\\
+    &= s_1s_2 + (s_1t_2 + t_1s_2 + t_1t_2)\sqrt{2}\\
+    &= u+v\sqrt{2}, u,v\in\mathbb{Q}
+      & \text{(closures in $\mathbb{Q}$ from above)}\\
+  \end{align*}
+\end{solution}
+\begin{solution}
+  b) If $x \ne 0, x\in{K}$ then $1/x\in{K}$:\\
+
+  Let $x=s+t\sqrt{2}:s,t\in{\mathbb{Q}}$
+  We can say that $1/x$
+  \begin{align*}
+    &= \frac{1}{s+t\sqrt{2}}\\
+    &= \frac{s-t\sqrt{2}}{(s+t\sqrt{2})(s-t\sqrt{2})}\\
+    &= \frac{s-t\sqrt{2}}{s^2-2t^2}\\
+    &= (s-t\sqrt{2})\frac{1}{s^2-2t^2}\\
+    &= \frac{s}{s^2-2t^2} + \frac{-t\sqrt{2}}{s^2-2t^2}
+    & \text{(Distributive on $\mathbb{R}$)}\\
+    &= \frac{s}{s^2-2t^2} + \frac{-t}{s^2-2t^2}\sqrt{2}
+    & \text{(Conjugative on $\mathbb{R}$)}\\
+    &= s\frac{1}{s\cdot{s}-2 \cdot t \cdot t} 
+      + (-t)\frac{1}{s\cdot s-2 \cdot t \cdot t}\sqrt{2}\\
+    &= u + v\sqrt{2}: u,v,\in\mathbb{Q}
+      & \text{(Closures on $\mathbb{Q}$)}\\
+    & \in R
+  \end{align*}
+\end{solution}
+\end{document}

@@ -1,0 +1,38 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{amsmath}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S2.4)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\begin{document}
+
+\newenvironment{amatrix}[1]{%
+  \left[\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right]
+}
+
+\newenvironment{augmatrix}[1]{%
+  \left[\begin{array}{#1}
+}{%
+  \end{array}\right]
+}
+
+\begin{problem}$M$-function: The domain $D$ is the set of positive reals. 
+  It is defined as follows: if $x$ is irrational, then $M(x)=0$. 
+  If $x$ is rational, write $x= p/ q$, where $p, q$ are relatively prime integers. 
+  Then $M(x)=1/ q$. The questions is is $M$ bounded? 
+  What is $sup\ M(D)$, what is $inf\ M(D)$?
+\end{problem}
+\begin{solution}Every element in $M$ is either $0$ or $1/q$.
+  Since $0<1/q\le{1}$ for all $q\in\mathbb{Z^+}$, every element $m\in{M(D)}$
+  is bound by $0$ on the left and $1$ to the right with 
+  both $0,1\in{M(D)}$. So
+  $$inf\ M(D)=0$$
+  $$sup\ M(D)=1$$
+\end{solution}
+\end{document}

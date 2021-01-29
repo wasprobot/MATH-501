@@ -1,0 +1,36 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{amsmath}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(sets)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\begin{document}
+
+\newenvironment{amatrix}[1]{%
+  \left[\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right]
+}
+
+\newenvironment{augmatrix}[1]{%
+  \left[\begin{array}{#1}
+}{%
+  \end{array}\right]
+}
+
+\begin{problem}Consider an infinite sequence of sets 
+  $A_1, A_2,\dots$ such that for all $i>=1$, we have that 
+  $A_{i+1}\subseteq{A_i}$, and $A_i\ne{\phi}$. 
+  Is it possible that the intersection is empty?
+\end{problem}
+\begin{solution}Since $A_2\subseteq{A_1}$, $A_2\cap{A_1}=A_2$\\
+  It's easy to see that in general $A_{i+1}\cap{A_i}=A_{i+1}$. 
+  Hence all these sets intersected in succession will be
+  $I=A_{i}$ as $i\rightarrow{\infty}$. Since $A_i\ne{\phi}$,
+  $I$ is not empty.
+\end{solution}
+\end{document}

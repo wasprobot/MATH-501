@@ -1,0 +1,49 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{amsmath}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(ternary representation)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\begin{document}
+
+\newenvironment{amatrix}[1]{%
+  \left[\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right]
+}
+
+\newenvironment{augmatrix}[1]{%
+  \left[\begin{array}{#1}
+}{%
+  \end{array}\right]
+}
+
+\begin{problem}Define $[0,1]\supseteq C:=
+  \{
+    x:x=(.c_1c_2\dots{c_n}\dots)_3, 
+    c_i\in\{0,2\},
+    \forall{i\in{\mathbb{N}}}
+  \}$.
+\end{problem}
+\begin{solution}a) To see if $C$ is countable
+  let's look at another set,
+  $C':=\{
+    x:x=(.c_1c_2\dots{c_n}\dots)_3,
+    c_i=1,
+    \forall{i\in{\mathbb{N}}}
+  \}$.
+  All the digits in $x$ are $1$'s. Since there's only one such
+  number $\frac{1}{2}=(.1111111\dots)_3$, $C'$ is \textit{countable}.
+  Since $C\cup{C'} = [0,1]$ is uncountable, $C$ is 
+  \textbf{uncountable}?\\
+
+  b) Assuming there is an interval $(a, b)$ with length $l>0$
+  such that $(a, b)\subseteq{C}$. By definition, 
+  the subinterval $(a+\frac{l}{3},a+\frac{2l}{3})\not\subset{C}$.
+  Therefore such $(a,b)$ cannot exist.
+\end{solution}
+\end{document}

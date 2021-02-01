@@ -1,0 +1,56 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{amsmath}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S2.3)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\begin{document}
+
+\newenvironment{amatrix}[1]{%
+  \left[\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right]
+}
+
+\newenvironment{augmatrix}[1]{%
+  \left[\begin{array}{#1}
+}{%
+  \end{array}\right]
+}
+\problemnumber{9}
+\begin{problem}Show that if $A$ and $B$ are bounded
+  subsets of $\mathbb{R}$, then $A\cup{B}$ is bounded
+  and $sup(A\cup{B}) = sup\{sup\ A, sup\ B\}$.
+\end{problem}
+\begin{solution}
+  For any $z\in{A\cup{B}}$ there are 2 cases:
+    Since $A$ is upper bounded by $sup\ A$ for every $v<sup\ A$, 
+    there exists $a'\in{A}$ such that $v<a'$. 
+    It is also the case that $a'\in{A\cup{B}}$, so for cases
+    that $\sup\ A$ is an upper bound for $A\cup{B}$, $sup\ A\cup{B} = sup\ A$.
+    Similarly for cases that $\sup\ B$ is an upper bound for $A\cup{B}$, 
+    $sup\ A\cup{B} = sup\ B$.\\
+
+    For all $z\in{A\cup{B}}$ two \textit{non exclusive} cases exist:
+    \begin{enumerate}
+      \item $z\in{A}$:\\
+      Since $A$ is bounded by $sup\ A$ and $inf\ A$,
+      $inf\ A \le{z}\le{sup\ A}$. In other words,
+      $A\cup{B}$ is \textbf{bounded} and 
+      $sup\ A\cup{B} = sup\ A$ (from above).
+      \item $z\in{B}$:\\
+      Since $B$ is bounded by $sup\ B$ and $inf\ B$,
+      $inf\ B \le{z}\le{sup\ B}$. In other words,
+      $A\cup{B}$ is \textbf{bounded} and 
+      $sup\ A\cup{B} = sup\ B$ (from above).
+    \end{enumerate}
+    In any case, $A\cup{B}$ is \textbf{bounded} and 
+    has a supremum as $sup\ A$ or $sup\ B$. Since $sup\ A,sup\ B$
+    could be distinct, we'll need to pick the greater of the two:
+    $$sup\ A\cup{B}=sup\ \{sup\ A,sup\ B\}$$
+\end{solution}
+\end{document}

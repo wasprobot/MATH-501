@@ -1,0 +1,40 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{amsmath}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(limits of sequences)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\begin{document}
+
+\newenvironment{amatrix}[1]{%
+  \left[\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right]
+}
+
+\newenvironment{augmatrix}[1]{%
+  \left[\begin{array}{#1}
+}{%
+  \end{array}\right]
+}
+
+\begin{problem}Let $a_0$ be a positive real number. 
+  Then define the sequence $a_i$ recursively:  
+  $a_{i+1}=\sqrt{a_i},i=0,1,2,\dots$ 
+  This sequence depends on $a_0$, the number you start with.
+  E.g. if $a_0=1$, then every element of the sequence is $1$, 
+  so it clearly converges. Does it converge for every starting number? 
+\end{problem}
+\begin{solution}
+  \textit{claim:} All such sequences converge to 1.\\
+  Clearly, such a sequence converges for $a_0=1$.\\
+  If $a_0>1$, $a_{i+1}<a_i$ or for all $n$, $a_n<a_{n-1}<a_{n-2}\dots<a_0$.
+  Therefore $|a_n-1| = a_n-1 < a_0-1$.\\
+  For $a_0<1$, $a_{i+1}>a_i$ or $\frac{a_{i+1}}{a_i}>1$
+  Therefore $\frac{1}{\sqrt{a_i}}>1$.\\
+\end{solution}
+\end{document}

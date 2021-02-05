@@ -1,0 +1,65 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(limits of sequences)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+\begin{document}
+
+\newenvironment{amatrix}[1]{%
+  \left[\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right]
+}
+
+\newenvironment{augmatrix}[1]{%
+  \left[\begin{array}{#1}
+}{%
+  \end{array}\right]
+}
+
+\begin{problem}Prove that
+  $$\lim_{n\rightarrow\infty}(\frac{\sin{n}}{n})^n=0$$
+\end{problem}
+\begin{solution}Let $X=(x_n)$ be the sequence of all 
+  $$x_n=(\frac{\sin{n}}{n})^n$$
+  
+  Since $\abs*{\sin{n}}\le{1}$
+  $\abs*{\sin{n}}^n\le{1}$. Or
+  $$\abs*{(\sin{n})^n}\le{1}$$
+
+  Since $n>{0}$,
+  $n^n=\abs*{n^n}>{0}$.
+  Dividing the inequality above by $\abs*{n^n}$, 
+  we get that
+  $$
+  \frac{\abs*{(\sin{n})^n}}{\abs*{n^n}}
+  =\abs*{(\frac{\sin{n}}{n})^n}
+  \le{\frac{1}{n^n}}
+  \le{\frac{1}{n}}
+  $$
+  This implies that
+  $$
+    \abs{x_n-0}
+    \le{\frac{1}{n}}
+  $$
+  Let $(a_n)=(\frac{1}{n})$. We know that $\lim(a_n)=0$
+  and since for all $n$,
+  $$
+    \abs{x_n-0}
+    \le{a_n}
+  $$
+  it follows that
+  $$
+    \lim(x_n) = 0
+  $$
+\end{solution}
+\end{document}

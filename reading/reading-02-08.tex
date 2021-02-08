@@ -1,0 +1,45 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S{3.2} Limit Theorems)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+\begin{document}
+
+\newenvironment{amatrix}[1]{%
+  \left[\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right]
+}
+
+\newenvironment{augmatrix}[1]{%
+  \left[\begin{array}{#1}
+}{%
+  \end{array}\right]
+}
+
+\begin{problem}Assume $X=(x_n)\rightarrow{x}$ and
+  $Z=(z_n)\rightarrow{z}, z\ne{0}$.
+\end{problem}
+\begin{solution}Two cases arise:
+  \begin{enumerate}
+    \item[Case I:] There are finitely many $z_i=0$. This implies 
+      there is a $k\in{\mathbb{N}}$ after which $z_i\ne{0}$.
+      In other words, $Z'=(z_n), n>k$ is a tail of $Z$ that does 
+      converge to $z$. Hence the quotient sequence $X/Z$ converges.
+      to $x/z$.
+    \item[Case II:] There are infinetely many zero- and nonzero-elements
+      in $Z$. This means no matter how large a $k\in{\mathbb{N}}$,
+      we can always find a $z_{i>k}=0$. I.e., $z_n$ cannot converge.
+      In this case the quotient sequence $X/Z$ does not exist.
+  \end{enumerate}
+\end{solution}
+\end{document}

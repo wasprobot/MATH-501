@@ -1,0 +1,50 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S{3.3} Monotone Convergence Theorem)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+\begin{document}
+
+\newenvironment{amatrix}[1]{%
+  \left[\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right]
+}
+
+\newenvironment{augmatrix}[1]{%
+  \left[\begin{array}{#1}
+}{%
+  \end{array}\right]
+}
+
+\begin{problem}If $(b_n)$ is a bounded sequence, and $lim(a_n)=0$,
+  then $lim(a_nb_n)=0$.
+\end{problem}
+\begin{solution}The argument $|m||a_n|=|ma_n|\le|a_n{b_n}|\le|M a_n|=|M||a_n|$
+  is valid and using \textbf{Squeeze Theorem} leads to the conclusion $lim|a_n{b_n}|=0$.\\
+
+  However this does not imply that $lim(a_n{b_n})=0$ (only the converse is known to be a theorem).\\
+
+  By definition for every $\epsilon>0$ there exists $K\in{\mathbb{N}}$ such that
+  when $n\ge{K}$, $||a_nb_n|-0|<\epsilon$.
+  Considering both cases:
+  \begin{enumerate}
+    \item[Case I]: $a_n{b_n}\ge{0}
+    \implies |a_n{b_n}| = a_n{b_n}$, and\\
+    $lim(a_nb_n)=0$ follows from above.
+    \item[Case II]: $a_n{b_n}<{0}
+    \implies |a_n{b_n}| = -a_n{b_n}$, therefore\\
+    $||a_nb_n|-0|=|-a_nb_n-0|<\epsilon$\\
+    ???
+  \end{enumerate}
+\end{solution}
+\end{document}

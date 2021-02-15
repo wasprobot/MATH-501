@@ -1,0 +1,43 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S{3.3} Monotone Convergence Theorem)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+\begin{document}
+
+\newenvironment{amatrix}[1]{%
+  \left[\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right]
+}
+
+\newenvironment{augmatrix}[1]{%
+  \left[\begin{array}{#1}
+}{%
+  \end{array}\right]
+}
+
+\begin{problem}Examine whether $(x_n)$ converges, where
+  $x_1=a>0$ and $x_{n+1}=x_n+\frac{1}{x_n}$.
+\end{problem}
+\begin{solution}Since $x_n>0, \frac{1}{x_n}>0$. It is easy to see that
+  $$x_1<x_2<\dots<x_n, n\in{\mathbb{N}}$$
+  Assume the sequence had a limit, $x$. Since $(x_{n+1})$ is a 1-tail
+  of $(x_n)$, they should both converge to the same limit. In order words
+  $$lim(x_{n+1})=lim(x_n)=x$$
+  Since the two sequences are linearly related
+  their limits would also follow the same relation,
+  $$x=x+\frac{1}{x}$$
+  Since this leads to an absurdity $\frac{1}{x}=0$,
+  our assumption that $(x_n)$ converges must be \textbf{incorrect}.
+\end{solution}
+\end{document}

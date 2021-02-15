@@ -1,0 +1,37 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{amsmath}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S3.3 exercises)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\begin{document}
+
+\newenvironment{amatrix}[1]{%
+  \left[\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right]
+}
+
+\newenvironment{augmatrix}[1]{%
+  \left[\begin{array}{#1}
+}{%
+  \end{array}\right]
+}
+\problemnumber{2}
+\begin{problem}If $x_1>1$ and $x_{n+1}=2-\frac{1}{x_n}$.
+  Does $(x_n)$ converge/diverge? If so, find the limit.
+\end{problem}
+\begin{solution}We will first prove by induction that
+  $(x_n)$ is monotonically decreasing. Assume for $k\in{\mathbb{N}}$,
+  \begin{align*}
+    x_{k} &> x_{k+1}\\
+    \frac{1}{x_{k+1}} &> \frac{1}{x_{k}}\\
+    \frac{1}{2-\frac{1}{x_{k}} &> \frac{1}{x_{k}}\\
+      &= 
+  \end{align*}
+\end{solution}
+\end{document}

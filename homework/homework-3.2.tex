@@ -1,0 +1,46 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{amsmath}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S3.2)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\begin{document}
+
+\newenvironment{amatrix}[1]{%
+  \left[\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right]
+}
+
+\newenvironment{augmatrix}[1]{%
+  \left[\begin{array}{#1}
+}{%
+  \end{array}\right]
+}
+\problemnumber{15}
+\begin{problem}To prove: If $0<a<b, z_n := (a^n+b^n)^{1/n} \rightarrow b$
+\end{problem}
+\begin{solution}We first claim that $(2^{1/n})$ converges to $1$.
+  We can prove this by observing that
+  $$\log_{2}(2^{1/n}) = \frac{1}{n}\log_{2}(2) = \frac{1}{n}$$
+  $$\therefore 2^{1/n} \rightarrow 2^0 = 1$$
+  since $1/n$ converges to $0$.
+  Now since
+  \begin{align*}
+    0 < a < b\\
+    0 < a^n < b^n\\
+    b^n < a^n+b^n < 2b^n\\
+    (b^n)^{1/n} < (a^n+b^n)^{1/n} < (2b^n)^{1/n}\\
+    b < z_n < 2^{1/n}b\\
+    b \le z_n \le 2^{1/n}b\\
+    \text{ (by laxing the inequality)}
+  \end{align*}
+  Since we know that $(2^{1/n}) \rightarrow 1$ 
+  and $(b) \rightarrow b$, using Squeeze Theorem,
+  we have that $z_n \rightarrow b$.
+\end{solution}
+\end{document}

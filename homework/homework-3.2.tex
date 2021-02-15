@@ -26,17 +26,23 @@
 \end{problem}
 \begin{solution}We first claim that $(2^{1/n})$ converges to $1$.
   We can prove this by observing that
-  $$\log_{2}(2^{1/n}) = \frac{1}{n}\log_{2}(2) = \frac{1}{n}$$
-  $$\therefore 2^{1/n} \rightarrow 2^0 = 1$$
-  since $1/n$ converges to $0$.
-  Now since
   \begin{align*}
-    0 < a < b\\
-    0 < a^n < b^n\\
-    b^n < a^n+b^n < 2b^n\\
-    (b^n)^{1/n} < (a^n+b^n)^{1/n} < (2b^n)^{1/n}\\
-    b < z_n < 2^{1/n}b\\
-    b \le z_n \le 2^{1/n}b\\
+    2^{1/n}&=1+d_n,\ d_n>0\\
+    2&=(1+d_n)^n \ge 1+nd_n
+    \text{(by Bernoulli's Inequality)}\\
+    \implies 2-1&\ge nd_n\\
+    d_n&\le{1/n}\\
+    \implies |2^{1/n}-1|=d_n&\le{1/n}
+  \end{align*}
+  Since $1/n\rightarrow{0}$, by theorem $3.1.10$,
+  $2^{1/n}\rightarrow{1}$. Now since
+  \begin{align*}
+    0 < a &< b\\
+    0 < a^n &< b^n\\
+    b^n < a^n+b^n &< 2b^n\\
+    (b^n)^{1/n} < (a^n+b^n)^{1/n} &< (2b^n)^{1/n}\\
+    b < z_n &< 2^{1/n}b\\
+    b \le z_n &\le 2^{1/n}b
     \text{ (by laxing the inequality)}
   \end{align*}
   Since we know that $(2^{1/n}) \rightarrow 1$ 

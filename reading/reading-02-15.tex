@@ -1,0 +1,43 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S{3.4} Subsequences)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+\begin{document}
+
+\newenvironment{amatrix}[1]{%
+  \left[\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right]
+}
+
+\newenvironment{augmatrix}[1]{%
+  \left[\begin{array}{#1}
+}{%
+  \end{array}\right]
+}
+
+\begin{problem}Prove if $\lim{a_n} = L_1 \neq L_2 = \lim{b_n}$, 
+  then their `merge', $(c_n)$ diverges and converges if $L_1=L_2$.
+\end{problem}
+\begin{solution}Let's assume $c_n$ converges with 
+  $L_1 \neq L_2$. W.L.O.G., let $L_2>L_1$. 
+  By definition of limits, $a_n \nrightarrow L_2$.
+  Since $a_n$ is a subsequence of $c_n$, by theorem $3.4.2$,
+  $c_n \nrightarrow L_2$. Also by the same theorem since $b_n \rightarrow L_2$
+  it cannot be a subsequence of $c_n$ which is against the premise. 
+  Hence we must conclude that $c_n$ diverges.\\
+  If, on the contrary, $L_1=L_2$, by definition of the `merge', 
+  $c_n$ is bounded by $L_1$, and every subsequence of $c_n$ converges to $L_1$.
+  Hence by theorem $3.4.9$, $c_n \rightarrow L_1$.
+\end{solution}
+\end{document}

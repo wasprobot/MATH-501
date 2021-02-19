@@ -1,0 +1,46 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S{3.5} Cauchy Sequences)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+\begin{document}
+\begin{problem}Let the sequence $(x_n)$ be defined recursively 
+  as $x_1=1$, and $x_{n+1}=1+1/x_n$ for $n>1$. Prove that $(x_n)$ converges.
+\end{problem}
+\begin{solution}By Triangle Inequality and definition of the sequence
+  \begin{align*}
+    |x_{n+1}-x_n| 
+      &\le |1+\frac{1}{x_n}| - |x_n|\\
+      &= \frac{x_n+1}{x_n} - x_n
+        \text{ (since $x_n>0, \forall{n\in{\mathbb{N}}}$)}\\
+      &= \frac{x_n+1}{1+\frac{1}{x_{n-1}}} - x_n\\
+      &= \frac{(x_n+1)x_{n-1}}{x_{n-1}+1} - x_n\\
+      &= \frac{x_n x_{n-1} + x_{n-1}}{x_{n-1}+1} - x_n\\
+      &= \frac{x_n x_{n-1} + x_{n-1} - x_n x_{n-1} -x_n}{x_{n-1}+1}\\
+      &= \frac{x_{n-1} - x_n}{x_{n-1}+1}\\
+      &\le \frac{|x_{n-1} - x_n|}{x_{n-1}+1}
+        \text{ (by Triangle Inequality)}\\
+  \end{align*}
+  Moreover, we can show by Induction that
+  $1\le{x_n}\le{2}$. Or
+  \begin{align*}
+    2 \le x_n+1 &\le 3\\
+    \implies \frac{1}{x_n+1} &\le \frac{1}{2}
+  \end{align*}
+  Using the two inequalities above, we have that the ratio
+  \begin{align*}
+    \frac{|x_{n+1}-x_n|}{|x_n - x_{n-1}|}
+      \le \frac{1}{2}
+  \end{align*}
+  I.e., $(x_n)$ is a \textit{contractive} sequence, hence a Cauchy Sequence, hence convergent.
+\end{solution}
+\end{document}

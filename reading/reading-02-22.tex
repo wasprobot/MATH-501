@@ -1,0 +1,40 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S{3.6} Properly Divergent Sequences)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+\begin{document}
+\begin{problem}Prove that $x_n=\sqrt{n^2-n-1}$ is properly divergent.
+\end{problem}
+\begin{solution}Let's first prove, by induction, that ultimately,
+  $x_n\ge{n-1}$. The \textbf{base step} is clear at $n=2$. For the induction
+  step, assume the claim is true for a given $n$, and hence
+  \begin{align*}
+    x_n = \sqrt{n^2-n-1} &\ge n-1\\
+    x_n^2 = n^2-n-1 &\ge n^2-2n+1\\
+    x_n^2 + 2n &\ge n^2+1
+  \end{align*}
+  Squaring the subsequent term $x_{n+1}^2$ we get
+  \begin{align*}
+    &= (n+1)^2 -(n+1) -1\\
+    &= n^2+2n-n-1\\
+    &= x_n^2+2n\\
+    &\ge n^2+1 \text{ (from above)}
+  \end{align*}
+  In other words $x_{n+1}\ge\sqrt{n^2+1}$
+  which is $>(n+1)-1$. Therefore $x_n\ge{n-1}$ for $n\ge2$.\\
+
+  By offsetting $n$ and letting $y_n:=(n-1)$ we have that $\lim(y_n)=+\infty$.
+  Since $x_n\ge{y_n}$, $\lim(x_n)=+\infty$. I.e., $\sqrt{n^2-n-1}$ is properly
+  divergent.
+\end{solution}
+\end{document}

@@ -1,0 +1,34 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S{3.7} Infinite Series)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+\begin{document}
+\begin{problem}A scheme of building a bridge off a cliff is given. How long will the bridge grow?
+\end{problem}
+\begin{solution}This is the case of an infinite series concerning the length of the bridge – 
+  with just one brick, the length of the bridge $s_1=1/2$; with two, it's $s_2=1/2+1/4$
+  and so on.\\
+  
+  Thus we find the overall length of the bridge to be the \textbf{geometric series} of the form:
+  $$S
+    =\sum_{1}^{\infty}{s_n}
+    =\sum_{1}^{\infty}{\frac{1}{2n}}
+    =\frac{1}{2}\sum_{1}^{\infty}{\frac{1}{n}}
+  $$
+
+  But we know that the sequence $(1/n)=\{1,\frac{1}{2},\frac{1}{3},\dots\}$ is \textbf{unbounded}, and conclude from the examples in the book that
+  $S$, too, is \textbf{unbounded}.\\
+
+  In other words, this bridge will continue to grow \textit{ad infinitum}.
+\end{solution}
+\end{document}

@@ -1,0 +1,31 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S{3.7} Comparison Tests)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+\begin{document}
+\begin{problem}Show that $\sum{\frac{\cos{n}}{n^2}}$ converges.
+\end{problem}
+\begin{solution}We start with separating the sequence $x_n=\frac{\cos{n}}{n^2}$ 
+  into $x_{pos}$ and $x_{neg}$, 
+  the subsequences containing positive and negative values of $x_n$.\\
+  We see that $0<x_{pos}\le{1/n^2}$ for all $n$ and since $\sum{1/n^2}$ converges
+  so does $\sum{x_{pos}}$.\\
+
+  Similarly $0<-x_{neg}<1/n^2$. This implies that the summation
+  $\sum{-x_{neg}}$ converges (let's say to $x$). Taking the negative sign out of the
+  summation, $\sum{-x_{neg}}$ must converge to $-x$.\\
+
+  Since $\sum{x_n}=\sum{x_{pos}}+\sum{x_{neg}}$ it follows that $\sum{x_n}$
+  converges.
+\end{solution}
+\end{document}

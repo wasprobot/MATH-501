@@ -1,0 +1,260 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage[shortlabels]{enumitem}
+
+\newtheorem*{conjecture}{Conjecture}
+\newtheorem*{corollary}{Corollary}
+\newtheorem*{proposition}{Proposition}
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{definition}{Definition}
+\newtheorem*{lemma}{Lemma}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+\begin{document}
+
+\begin{theorem}[3.1.5] Let $X=(x_n)$ be a sequence of real numbers, and let $x\in{\mathbb{R}}$.
+  The following statements are equivalent.
+  \begin{enumerate}[(a)]
+    \item $X$ converges to $x$.
+    \item For every $\epsilon>0$, there exists a natural number $K$ such that for all $n>K$,
+      the terms $x_n$ satisfy $|x_n-x|<\epsilon$.
+    \item For every $\epsilon>0$, there exists a natural number $K$ such that for all $n>K$,
+      the terms $x-\epsilon<x_n<x+\epsilon$.
+    \item For every $\epsilon$-neigborhood $V_{\epsilon}(x)$ or $x$, there exists a natural number
+      $K$ such that for all $n\ge{K}$, the terms $x_n$ belong to $V_{\epsilon}(x)$.
+  \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[3.1.9] Let $X=(x_n:n\in{\mathbb{N}})$ be a sequence of real numbers and let
+  $m\in{\mathbb{N}}$. Then the $m$-tail $X_m=\{x_{m+n}:n\in{\mathbb{N}}\}$ of $X$ converges
+  if and only if $X$ converges. In this case, $\lim{X_m}=\lim{X}$.
+\end{theorem}
+
+\begin{theorem}[3.1.10] Let $(x_n)$ be a sequence of real numbers and let $x\in{\mathbb{R}}$.
+  If $(a_n)$ is a sequence of positive real numbers with $\lim{(a_n)}=0$ and if for some $C>0$
+  and some $m\in{\mathbb{N}}$ we have
+  $\abs{x_n-x} \le Ca_n$ for all $n \ge m$, then it follows that $\lim{(x_n)}=x$.
+\end{theorem}
+
+\begin{theorem}[3.2.2]A convergent sequence of real numbers is bounded.
+\end{theorem}
+
+\begin{theorem}[3.2.3]
+  \begin{enumerate}[(a)]
+    \item Let $X=(x_n)$ and $Y=(y_n)$ be sequences of real numbers that converge to $x$ and $y$,
+      respectively, and let $c \in{\mathbb{R}}$. Then the sequences  $X+Y,X-Y,X\dot{Y}$, and
+      $cX$ converge to $x+y,x-y,xy$ and $cx$, respectively.
+    \item If $X=(x_n)$ converges to $x$ and $Z=(z_n)$ is a sequence of nonzero real numbers
+      that converges to $z\ne{0}$, then the quotient sequence $X/Z$ converges to $x/z$.
+  \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[3.2.4] If $X=(x_n)$ is a convergent sequence of real numbers and if $x_n\ge{0}$
+  for all $n \in{\mathbb{N}}$, then $x=\lim{(x_n)}\ge{0}$.
+\end{theorem}
+
+\begin{theorem}[3.2.5] If $X=(x_n)$ and $Y=(y_n)$ are convergent sequences of real numbers
+  and if $x_n\le{y_n}$ for all $n \in{\mathbb{N}}$, then $\lim(x_n)\le{\lim(y_n)}$.
+\end{theorem}
+
+\begin{theorem}[3.2.6] If $X=(x_n)$ is a convergent sequence and if $a\le{x_n}\le{b}$ for all
+  $n \in{\mathbb{N}}$, then $a\le{\lim(x_n)}\le{b}$.
+\end{theorem}
+
+\begin{theorem}[3.2.7] \textbf{Squeeze Theorem} Suppose that $X=(x_n), Y=(y_n)$ and $Z=(z_n)$
+  and sequences of real numbers such that $x_n\le{y_n}\le{z_n}$ for all $n \in{\mathbb{N}}$,
+  and that $\lim(x_n)=\lim(z_n)$. Then $Y=(y_n)$ is convergent and
+  $$\lim(x_n)=\lim(y_n)=\lim(z_n)$$
+\end{theorem}
+
+\begin{theorem}[3.2.9] If $x=\lim(x_n)$, then $\abs{x}=\lim(\abs{x_n})$.
+\end{theorem}
+
+\begin{theorem}[3.2.10] If $\lim(x_n)=x\ge{0}$, then $\lim(\sqrt{x_n})=\sqrt{x}$.
+\end{theorem}
+
+\begin{theorem}[3.2.11] Let $X=(x_n)$ be a sequence of positive real numbers
+  such that $L:=\lim(x_{n+1}/x_n)$ exists. If $L<1$, then $(x_n)$ converges and 
+  $\lim(x_n)=0$.
+\end{theorem}
+
+\begin{theorem}[3.3.2] \textbf{Monotone Convergence Theorem} A monotone sequence of real
+  numbers is convergent if and only if it is bounded. Further
+  \begin{enumerate}[(a)]
+    \item If $X=(x_n)$ is a bounded increasing sequence, then
+      $$\lim(x_n)=\sup\{x_n:n \in{\mathbb{N}}\}$$
+    \item If $Y=(y_n)$ is a bounded decreasing sequence, then
+      $$\lim(y_n)=\inf\{y_n:n \in{\mathbb{N}}\}$$
+  \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[3.4.2] If a sequence $X=(x_n)$ of real numbers converges to a real 
+  number $x$, then any subsequence $X'=(x_{n_k})$ of $X$ also converges to $x$.
+\end{theorem}
+
+\begin{theorem}[3.4.4] Let $X=(x_n)$ be a sequence of real numbers. Then following
+  are equivalent
+  \begin{enumerate}[(i)]
+    \item The sequence $X=(x_n)$ does not converge to $x \in{\mathbb{R}}$
+    \item There exists an $\epsilon_0>0$ such that for any $k \in{\mathbb{N}}$, there exists
+      $n_k \in{\mathbb{N}}$ such that $n_k\ge{k}$ and $\abs{x_{n_k}-x}\ge{\epsilon_0}$
+    \item There exists an $\epsilon_0>0$ and a subsequence $X'=(x_{n_k})$ of $X$ such that 
+      $\abs{x_{n_k}-x}\ge{\epsilon_0}$ for all $k \in{\mathbb{N}}$
+  \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[3.4.5] \textbf{Divergence Criteria} If a sequence $X=(x_n)$ of real numbers
+  has either of the following prooperties, then $X$ is divergent
+  \begin{enumerate}[(i)]
+    \item $X$ has two convergent subsequences $X'=(x_{n_k})$ and $X''=(x_{r_k})$ whose limits are not equal.
+    \item $X$ is unbounded.
+  \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[3.4.7] \textbf{Monotone Subsequence Theorem} If $X=(x_n)$ is a sequence of real numbers,
+  then there's a subsequence of $X$ that is monotone.
+\end{theorem}
+
+\begin{theorem}[3.4.8] \textbf{Bolzano-Weierstraß Theorem} A bounded sequence of real numbers has
+  a convergent subsequence.
+\end{theorem}
+
+\begin{theorem}[3.4.9] Let $X=(x_n)$ be a bounded sequence of real numbers and let $x \in{\mathbb{R}}$
+  have the property that every convergent subsequence of $X$ converges to $x$. Then the sequence
+  $X$ converges to $x$.
+\end{theorem}
+
+\begin{theorem}[3.4.11] \textbf{Limit Superior and Limit Inferior}\\
+  
+  If $X=(x_n)$ is a bounded sequence of real numbers, then the following 
+  statements for a real number $x^*$ are equivalent
+  \begin{enumerate}[(a)]
+    \item $x^*=\limsup(x_n)$.
+    \item If $\epsilon>0$, there are at most a finite number of $n \in{\mathbb{N}}$ such that
+      $x^*+\epsilon<x_n$, but an infinite number of $n \in{\mathbb{N}}$ such that
+      $x^*-\epsilon<x_n$.
+    \item If $u_m=\sup\{x_n:n\ge{m}\}$, then $x^*=\inf\{u_m:m \in{\mathbb{N}}\}=\lim(u_m)$.
+    \item If $S$ is the set of subsequential limits of $(x_n)$, then $x^*=\sup{S}$.
+  \end{enumerate}
+
+  Similarly, The following statements are equivalent
+  \begin{enumerate}[(a)]
+    \item $x^*=\liminf(x_n)$.
+    \item If $\epsilon>0$, there are at most a finite number of $n \in{\mathbb{N}}$ such that
+      $x^*+\epsilon>x_n$, but an infinite number of $n \in{\mathbb{N}}$ such that
+      $x^*-\epsilon>x_n$.
+    \item If $u_m=\inf\{x_n:n\le{m}\}$, then $x^*=\sup\{u_m:m \in{\mathbb{N}}\}=\lim(u_m)$.
+    \item If $S$ is the set of subsequential limits of $(x_n)$, then $x^*=\inf{S}$.
+  \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[3.4.12] A bounded sequence $(x_n)$ is convergent if and only if
+  $\limsup(x_n)=\liminf(x_n)$.
+\end{theorem}
+
+\begin{definition}[3.5.1] A sequence of real numbers, $X=(x_n)$ is said to be a \textbf{Cauchy sequence}
+  if for every $\epsilon>0$ there exists as natural number $H(\epsilon)$ such that for all natural
+  numbers $n,m\ge{H(\epsilon)}$, the terms $x_n,x_m$ satisfy $\abs{x_n-x_m}<\epsilon$.
+\end{definition}
+
+\begin{lemma}[3.5.3] If $X=(x_n)$ is a convergent sequence of real numbers, then $X$ is a Cauchy
+  sequence.
+\end{lemma}
+
+\begin{lemma}[3.5.4] A Cauchy sequence of real numbers is bounded.
+\end{lemma}
+
+\begin{theorem}[3.5.5] A sequence of real numbers is convergent if and only if it is a Cauchy sequence.
+\end{theorem}
+
+\begin{definition}[3.5.7] We say that a sequence of real numbers $X=(x_n)$ is \textbf{contractive}
+  if there exists a constant $C, 0<C<1$, such that 
+  $$\abs{x_{n+2}-x_{n+1}} \le C\abs{x_{n+1}-x_n}$$
+\end{definition}
+
+\begin{theorem}[3.5.8] Every contractive sequence is a Cauchy sequence, and hence is convergent.
+\end{theorem}
+
+\begin{corollary}[3.5.10] If $X=(x_n)$ is a contractive sequence with constant $C, 0<C<1$,
+  and if $x^*:=\lim{X}$ then 
+  \begin{enumerate}[(i)]
+    \item $\abs{x^*-x_n} \le \frac{C^{n-1}}{1-C} \abs{x_2-x_1}$,
+    \item $\abs{x^*-x_n} \le \frac{C}{1-C} \abs{x_n-x_{n-1}}$.
+  \end{enumerate}
+\end{corollary}
+
+\begin{definition}[3.6.1] Let $X=(x_n)$ be a sequence of real numbers.
+  \begin{enumerate}[(i)]
+    \item We say that $(x_n)$ \textbf{tends to} $+\infty$, and write $\lim(x_n)=+\infty$, if
+      for every $\alpha \in{\mathbb{R}}$ there exists a natural number $K(\alpha)$ such that 
+      if $n>K(\alpha)$, then $x_n>\alpha$.
+    \item We say that $(x_n)$ \textbf{tends to} $-\infty$, and write $\lim(x_n)=-\infty$, if
+      for every $\beta \in{\mathbb{R}}$ there exists a natural number $K(\beta)$ such that 
+      if $n>K(\beta)$, then $x_n<\beta$.
+  \end{enumerate}
+  We say that $(x_n)$ is \textbf{properly divergent} if either $\lim(x_n)=+\infty$ or
+  $\lim(x_n)=-\infty$.
+\end{definition}
+
+\begin{theorem}[3.6.3] A monotone sequence of real numbers is properly divergent if and only if 
+  it is unbounded
+  \begin{enumerate}[(a)]
+    \item If $(x_n)$ is an unbounded increasing sequence, then $\lim(x_n)=+\infty$.
+    \item If $(x_n)$ is an unbounded decreasing sequence, then $\lim(x_n)=-\infty$.
+  \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[3.6.4] Let $(x_n)$ and $(y_n)$ be two sequence of real numbers and suppose 
+  for all $n \in{\mathbb{N}}$
+  $$x_n \le y_n$$
+  \begin{enumerate}[(a)]
+    \item If $\lim(x_n)=+\infty$, then $\lim(y_n)=+\infty$.
+    \item If $\lim(y_n)=-\infty$, then $\lim(x_n)=-\infty$.
+  \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[3.6.5] Let $(x_n)$ and $(y_n)$ be two sequences of positive real numbers 
+  and suppose that for some $L \in{\mathbb{R}}, L>0$ we have
+  $$\lim(x_n/y_n)=L$$
+  Then $\lim(x_n)=+\infty$ if and only if $\lim(y_n)=+\infty$.
+\end{theorem}
+
+\begin{theorem}[3.7.3] \textbf{The $n$th Term Test} If the series $\sum{x_n}$ converges,
+  then $\lim(x_n)=0$.
+\end{theorem}
+
+\begin{theorem}[3.7.4] \textbf{Cauchy Criterion for Series} The series $\sum{x_n}$ converges
+  if and only if for every $\epsilon>0$ there exists $M(\epsilon) \in{\mathbb{N}}$ such that 
+  if $m\ge n\ge M(\epsilon)$, then
+  $$\abs{s_m-s_n} = \abs{x_{n+1}+x_{n+2}+\dots+x_n}<\epsilon$$
+\end{theorem}
+
+\begin{theorem}[3.7.7] \textbf{Comparison Test} Let $X=(x_n)$ and $Y=(y_n)$ be sequences of real numbers 
+  and suppose that for some $K \in{\mathbb{N}}$ we have
+  $0\le x_n\le y_n$ for $n\ge K$.
+  \begin{enumerate}[(a)]
+    \item Then the convergence of $\sum{y_n}$ implies the convergence of $\sum{x_n}$.
+    \item The divergence of $\sum{x_n}$ implies the divergence of $\sum{y_n}$.
+  \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[3.7.8] \textbf{Limit Comparison Test} Suppose that $X=(x_n)$ and $Y=(y_n)$ are
+  strictly positive sequences and suppose that the following limit exists in $\mathbb{R}$
+  $$r:=\lim(\frac{x_n}{y_n})$$
+  \begin{enumerate}[(a)]
+    \item If $r\ne 0$ then $\sum{x_n}$ is convergent if and only if $\sum{y_n}$ is convergent.
+    \item If $r=0$ then $\sum{y_n}$ is convergent if and only if $\sum{x_n}$ is convergent.
+  \end{enumerate}
+\end{theorem}
+\end{document}

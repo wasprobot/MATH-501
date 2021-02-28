@@ -1,0 +1,49 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage[shortlabels]{enumitem}
+
+\newtheorem*{conjecture}{Conjecture}
+\newtheorem*{corollary}{Corollary}
+\newtheorem*{proposition}{Proposition}
+\newtheorem*{theorem}{Theorem}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+\begin{document}
+
+\begin{theorem}(3.1.5) Let $X=(x_n)$ be a sequence of real numbers, and let $x\in{\mathbb{R}}$.
+  The following statements are equivalent.
+  \begin{enumerate}[(a)]
+    \item $X$ converges to $x$.
+    \item For every $\epsilon>0$, there exists a natural number $K$ such that for all $n>K$,
+      the terms $x_n$ satisfy $|x_n-x|<\epsilon$.
+    \item For every $\epsilon>0$, there exists a natural number $K$ such that for all $n>K$,
+      the terms $x-\epsilon<x_n<x+\epsilon$.
+    \item For every $\epsilon$-neigborhood $V_{\epsilon}(x)$ or $x$, there exists a natural number
+      $K$ such that for all $n\ge{K}$, the terms $x_n$ belong to $V_{\epsilon}(x)$.
+  \end{enumerate}
+\end{theorem}
+
+\begin{theorem}(3.1.9) Let $X=(x_n:n\in{\mathbb{N}})$ be a sequence of real numbers and let
+  $m\in{\mathbb{N}}$. Then the $m$-tail $X_m=\{x_{m+n}:n\in{\mathbb{N}}\}$ of $X$ converges
+  if and only if $X$ converges. In this case, $\lim{X_m}=\lim{X}$.
+\end{theorem}
+
+\begin{theorem}(3.1.10) Let $(x_n)$ be a sequence of real numbers and let $x\in{\mathbb{R}}$.
+  If $(a_n)$ is a sequence of positive real numbers with $\lim{(a_n)}=0$ and if for some $C>0$
+  and some $m\in{\mathbb{N}}$ we have
+  $$|$$
+  
+\end{theorem}
+
+\end{document}

@@ -1,0 +1,27 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S{4.2} Limits of Functions)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+\begin{document}
+\begin{problem}Show that $\lim_{x\rightarrow{c}}{x^2}=c^2$.
+\end{problem}
+\begin{solution}We start with defining $g(x):x$ and $f(x):x^2$.
+  It is easy to see $f$ as a \textbf{product function} ($f=gg$)
+  and $f(x)=(gg)(x)=g(x)g(x)$.\\
+  A theorem states that $\lim_{x\rightarrow{c}}{(g(x)g(x))}
+  =\lim_{x\rightarrow{c}}{g(x)} \times \lim_{x\rightarrow{c}}{g(x)}$,
+  and since according to another, $\lim_{x\rightarrow{c}}{x}=c$,
+  we have
+  $$\lim_{x\rightarrow{c}}{f(x)}=c\times{c}=c^2$$
+\end{solution}
+\end{document}

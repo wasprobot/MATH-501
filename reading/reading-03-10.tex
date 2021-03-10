@@ -1,0 +1,28 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S{4.2} Limit Theorems)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+\begin{document}
+\begin{problem}Show that $\displaystyle{\lim_{x \to 0}(\frac{\sin{x}}{x}) = 1}$.
+\end{problem}
+\begin{solution}We start with observing that $\sin{x}<x<\tan{x}$ for
+  $0<x<\pi/2$. Dividing all parts by $\sin{x}$,
+  \begin{align*}
+    1<\frac{x}{\sin{x}}<\frac{1}{\cos{x}}\\
+    \cos{x}<\frac{\sin{x}}{x}<1
+  \end{align*}
+  Since $\displaystyle{\lim_{x \to 0}(1) = \lim_{x \to 0}(\cos{x}) = 1}$,
+  by \textbf{Squeeze therem} we have that 
+  $$\displaystyle{\lim_{x \to 0}(\frac{\sin{x}}{x}) = 1}$$
+\end{solution}
+\end{document}

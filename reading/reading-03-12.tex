@@ -1,0 +1,36 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S{4.3} Limits at Infinity)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+\begin{document}
+\begin{problem}Let $f:\mathbb{R}^+ \rightarrow \mathbb{R}$. Let $f_n=f(n)$ for $n = 1, 2, \dots$ 
+  a sequence corresponding to the function $f$. Which of the following statements are true?
+  \begin{enumerate}
+    \item If $\lim_{x \to \infty} f(x)=L$, then $\lim(f_n)=L$.
+    \item If $\lim(f_n)=L$, then $\lim_{x \to \infty} f(x)=L$
+  \end{enumerate}
+\end{problem}
+\begin{solution}
+  \begin{enumerate}
+    \item Let $\lim_{x\to \infty}f(x)=L$. By definition this implies
+    that for every sequence $(x_n)$ in a subset $(a,\infty)$ of $\mathbb{R}^+$,
+    such that $(x_n)\to \infty$, $(f(x_n))\to L$. We can use this property to pick
+    $(x_n)=\mathbb{N}$ which we know tends to $\infty$, hence $(f(x_n))\to L$.
+    \textbf{TRUE}.
+    
+    \item Conversely, let $(f(x_n))\to L$. Again by definition every convergent
+    sequence $f_n$ converges to the same limit as the function itself, hence
+    $f(x)$ must converge to $L$. \textbf{TRUE}
+  \end{enumerate}
+\end{solution}
+\end{document}

@@ -1,0 +1,28 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S{5.1} Continuous Functions)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+\begin{document}
+\begin{problem}Hypothesis: Let $f:\mathbb{R}^+\to\mathbb{R}$. For every $\epsilon>0$ there
+  exists $\delta>0$ such that $|x-y|<\delta$ and $x,y>0$ implies $|f(x)-f(y)|<\epsilon$.
+\end{problem}
+\begin{solution}Since $x,y\in\mathbb{R}^+$ are arbitrary, the given hypothesis is true
+  for any point $x$ in, and every corresponding point $y$ in $\mathbb{R}^+$. 
+  Hence, by definition, $f$ \textbf{is continuous} on the set $\mathbb{R}^+$.\\
+
+  Conversely, let $f$ be continuous on every point of $\mathbb{R}^+$. 
+  Let $y\in\mathbb{R}^+$ be one such point. By definition, for every $\epsilon>0$
+  there exists a $\delta>0$ such that $|x-y|<\delta$ implies $|f(x)-f(y)|<\epsilon$.
+  Since $x,y,>0$ this implication \textbf{is} the hypothesis.
+\end{solution}
+\end{document}

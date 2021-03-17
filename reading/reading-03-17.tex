@@ -1,0 +1,30 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S{5.2} Continuous Functions)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+\begin{document}
+\begin{problem}Let $f: \mathbb{R}\to \mathbb{R}$ be a function that is continuous on $\mathbb{R}$. 
+  Suppose that $c \in \mathbb{R}$ such that $f(c) > 0$. Show that there exists a $\delta > 0$ 
+  such that the function $f$ is positive on the $\delta$-neighborhood of $c$.\\
+  What if we only require continuity in $c$ as opposed to $\mathbb{R}$?
+\end{problem}
+\begin{solution}Since $f$ is continuous there exists an $\epsilon>0$ for every 
+  $\delta>0$ such that $f(x)$ is in the $\epsilon$-neighborhood of $f(c)$. 
+  Since $f(c)>0$, there are infinitely many +ve numbers in every neighborhood of it.
+  And since \textbf{$f$ is continuous in all neighborhoods of $c$}, at least one such 
+  neighborhoods contains $f>0$.\\
+
+  A continuity on \textit{just} $c$ does not guarantee that there exists a neighborhood
+  of $f(c)$ where $f>0$.
+\end{solution}
+\end{document}

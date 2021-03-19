@@ -1,0 +1,32 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S{5.2} Combinations of Continuous Functions)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+\begin{document}
+\begin{problem}Examples showing that in order for the composition $g\circ{f}$
+  to be continuous, it is necessary that both $f$ and $g$ are 
+  continuous on their respective domains.
+\end{problem}
+\begin{solution}
+  \begin{enumerate}
+    \item Let $f(x) := \mathrm{sgn}(x), 
+      g(x) := \sin(x)$. 
+      Clearly, the range of $f$, $\{-1,1\}\in{\mathbb{R}}$ and
+      $g$ is continuous in its domain. But since
+      $f$ is not continuous at $c=0$ the composition, $\sin(\mathrm{sgn}(x))$ 
+      is not continuous at $c=0$.
+    \item The inverse, $f\circ{g}$ is also discontinuous at
+      $c=0$, since $f$ is discontinuous. 
+  \end{enumerate}
+\end{solution}
+\end{document}

@@ -1,0 +1,36 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{enumitem,amsmath,mathtools}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S{5.3} Continuous Functions on Intervals)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+\begin{document}
+\begin{problem}Let $f:\mathbb{R}\to\mathbb{R}$ be a bijective function. 
+  Suppose that both $f$ and $f^{-1}$ are continuous on $\mathbb{R}$. 
+  Prove that the image of an open bounded interval is open bounded.
+\end{problem}
+\begin{solution}Let $x_1,x_2\in{\mathbb{R}}$. If $f^{-1}(x_1)=f^{-1}(x_2)$
+  we can see that $f(f^{-1}(x_1))=f(f^{-1}(x_2))$, i.e. $x_1=x_2$ (since 
+  $f$ is bijective). In other words, \textbf{$f^{-1}$ is injective}.
+
+  Now let $I:=(x_1,x_2)$ be open-bounded. The case where $x_1=x_2$ is trivial
+  since it implies $I=\emptyset$, the empty set, whose image
+  $f(\emptyset)=\emptyset$, which is \textbf{open bounded} and
+  we are done.
+
+  When $x_1\ne{x_2}$, we define a closed-bounded interval, $I':=[x_1,x_2]$.
+  Since $f$ is continuous everywhere, according to \textbf{Theorem 5.3.9}
+  the image $f(I')$ is a closed bounded interval, say $[m,M]$.
+
+  Since $f^{-1}$ is injective, $[n,M]=[f(x_1),f(x_2)]$ 
+  is the image of $I'$. Dropping the bounds,
+  $(n,M)$ is the image of $I$, which is \textbf{open bounded}.
+\end{solution}
+\end{document}

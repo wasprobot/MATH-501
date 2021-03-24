@@ -1,0 +1,34 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{enumitem,amsmath,mathtools}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S{5.4} Uniform Continuity)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+\begin{document}
+\begin{problem}Let $g(x)=\sqrt{x}$ on $I = [0, 2]$
+\end{problem}
+\begin{solution}
+  \begin{enumerate}
+    \item For a given $\epsilon>0$, we pick $\delta=\epsilon\sqrt{2}$ 
+    and $x,y \in I$ for which $|x-y|<\delta$. We now have that
+    \begin{align*}
+      |g(x)-g(y)| 
+      &= |\sqrt{x}-\sqrt{y}|\\
+      &= |\frac{x-y}{\sqrt{x}+\sqrt{y}}|\\
+      &= \frac{|x-y|}{\sqrt{x}+\sqrt{y}}\\
+      &= \frac{\delta}{2\sqrt{2}} = \epsilon
+    \end{align*}
+
+    \item For all $x \in I$ there is no number $K > 0$ such that $|g(x)|=\sqrt{x} \le K|x|$.
+    This is because as $x\to{0}$ the slope $\frac{1}{\sqrt{x}}$
+    gets asymptotically larger and larger and cannot be contained by any $K>0$.
+  \end{enumerate}
+\end{solution}
+\end{document}

@@ -1,32 +1,25 @@
 \documentclass[boxes, qed]{homework}
-\usepackage{amsmath}
+\usepackage{enumitem,amsmath,mathtools}
 \name{Rohit Wason}
 \course{Math 501}
 \term{Spring 2021}
-\hwnum{(\S2.3)}
+\hwnum{(\S{5.4} Uniform Continuity)}
 
 \newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
 \newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
 
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
 \begin{document}
-
-\newenvironment{amatrix}[1]{%
-  \left[\begin{array}{@{}*{#1}{c}|c@{}}
-}{%
-  \end{array}\right]
-}
-
-\newenvironment{augmatrix}[1]{%
-  \left[\begin{array}{#1}
-}{%
-  \end{array}\right]
-}
-
-\begin{problem}Is it possible to have two sets of real numbers, A and B, such that
-  1) A is a proper subset of B
-  2) sup A, sup B, inf A, inf B all exist
-  3) sup A = sup B and inf A = inf B
+\begin{problem}Let $g(x)=\sqrt{x}$ on $I = [0, 2]$
 \end{problem}
-\begin{solution}From definition, $A=\{x\in{\mathbb{R}}:|x-a|<\epsilon\}$
+\begin{solution}
+  \begin{enumerate}
+    \item Find a $\delta>0$ for a given $\epsilon>0$ such that for all $x,y \in I$ 
+    for which $|x−y|<\delta$
+    we have $|g(x) − g(y)| < \epsilon$
+    \item For all $x \in I$. Why is it true that there is no number $K > 0$ such that $|g(x)| \le K|x|$.
+  \end{enumerate}
 \end{solution}
 \end{document}

@@ -1,0 +1,29 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S{3.4} Limit superior \& inferior)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+\begin{document}
+\begin{problem}Let $(a_n)$ and $(b_n)$ be two sequences. Show that \\
+  $\lim \inf (a_n+b_n) \le \lim \inf a_n + \lim \sup b_n$ (assuming all these limits exist). 
+  Also show an example in which case equality happens, and one, in which case strict inequality happens.
+\end{problem}
+\begin{solution}Since all 3 limits exist, $(a_n), (b_n), (a_n+b_n)$ are all bounded. Hence
+  $\lim\sup$ and $\lim\inf$ are defined for all.
+  \begin{enumerate}
+  \item[(strict equality)] If $\lim \sup (a_n) = \lim \inf (a_n)$, according to theorem $3.4.12$,
+    $(a_n)$ converges. Let $(a_n)\rightarrow{a}$. Sinilarly let $(b_n)\rightarrow{b}$.
+    According to the rules of limits, $(a_n+b_n)\rightarrow{a+b}$. If we can show that in this case
+    $\lim \sup (a_n) = \lim \inf (a_n) = a$, and similarly for $b_n$, the equality is proved.
+  \end{enumerate}
+\end{solution}
+\end{document}

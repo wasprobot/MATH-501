@@ -1,0 +1,40 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{enumitem,amsmath,mathtools}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S{5.4} Uniform Continuity)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+\begin{document}
+\begin{problem}Let $I$ be closed bounded interval and let $f: I \to \mathbb{R}$ be continuous on $I$.
+  If $\epsilon > 0$ then there exists a Lipschitz function $g_{\epsilon}: I\to \mathbb{R}$ 
+  such that $|f(x) - g_{\epsilon}(x)| < \epsilon$ for all $x\in I$
+\end{problem}
+\begin{solution}
+  Take $g_{\epsilon}$, a piecewise linear function on $I\to \Bbb R$. By definition,
+  if we divide $I$ in a finite number of disjoint intervals $I_1,I_2,\dots,I_m$,
+  $g_{\epsilon}$ is a linear function on each interval $I_k$. 
+  Let the slopes of these linear functions be $m_k$ respectively
+  and $M=\max(m_k)$.\\
+  Since $M$ is the largest slope of $g_{\epsilon}$
+  between any two points $x,u\in{I}, x\ne{u}$ we have
+  $$\abs{\frac{g_{\epsilon}(x)-g_{\epsilon}(u)}{x-u}} \le M$$
+  We thus prove that \textbf{all piecewise linear functions} are Lipschitz functions.
+  Combining this result with \textbf{Theorem 5.4.13} we prove
+  the existence of a Lipschitz function $g_{\epsilon}: I\to \mathbb{R}$ 
+  such that 
+  $$|f(x) - g_{\epsilon}(x)| < \epsilon$$
+  % For a given $\epsilon>0$ we define $g_{\epsilon}:=c$, a constant function.
+  % $g_{\epsilon}$ satisfies the Lipschitz condition with any $K>0$, since for $x,u\in I$
+  % $$|g_{\epsilon}(x) - g_{\epsilon}(u)| = 0 \le K|x-u|$$
+  % Also $f$ is uniformally continuous on $I$, which means
+  % there exists $\delta(\epsilon)>0$ such that when $|x-y|<\delta(\epsilon)$
+  % then $|f(x)-f(y)|<\epsilon$
+\end{solution}
+\end{document}

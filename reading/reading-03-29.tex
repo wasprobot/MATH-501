@@ -1,0 +1,39 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{enumitem,amsmath,mathtools}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S{5.5} Gauges)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+\begin{document}
+\begin{problem}Let $\delta(x)=e^x$ be a gauge on $I=[-2,-1]$. Find a $\delta$-fine
+  partition on $I$, or show it doesn't exist.
+\end{problem}
+\begin{solution}Such a partition definetely exists, according to \textbf{Theorem 5.5.5}, so
+  let's find one!\\
+  
+  We define $10$ non-overlapping subintervals of $I$ as
+  \begin{align*}
+    I_1&:=[-2,-1.8],\\
+    I_2&:=[-1.8,-1.7],\dots,\\
+    I_{10}&:=[-1.1,-1]
+  \end{align*}
+
+  and a tagged partition $\dot{P}:=\{(I_1,-2),(I_2,-1.8),\dots\}$.\\
+
+  We also observe that
+  \begin{align*}
+    -2 \in I_1 \subseteq [-2-e^{-2},-2+e^{-2}]\\
+    -1.8 \in I_2 \subseteq [-1.8-e^{-1.8},-1.8+e^{-1.8}],\dots,\\
+    -1.1 \in I_{10} \subseteq [-1.1-e^{-1.1},-1.1+e^{-1.1}]
+  \end{align*}
+
+  Hence $\dot{P}$ is one such partition on $I$.
+\end{solution}
+\end{document}

@@ -1,0 +1,31 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{enumitem,amsmath,mathtools}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S{5.6} Monotone \& Inverse Functions)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+\begin{document}
+\begin{problem}(excellent problem \& diagram!)
+\end{problem}
+\begin{solution}
+  (a) To see if $f:[0,1]\to\mathbb{R}$ is monotone we take $x_1,x_2\in[0,1]$.
+  And consider the ``removed'' sets that these elements may belong to. Two cases
+  arise: If $x_1,x_2\in R_i$. The value of $f$ depends on how many $1$'s exist
+  after taking said steps (esp. converting the $2$'s to $1$). The existence
+  of $2$'s in $x$ will depend on if it goes on the ``right'' partition, while
+  constructing the set $C$. I.e., larger the value of $x$, larger $f(x)$ gets.
+  Hence $x_1\ge{x_2} \implies f(x_1)\ge{f(x_2)}$. This is a sufficient condition
+  that $f$ is monotone.\\
+  In the other case, when $x_1\in R_i$ and $x_2\in R_{i+m}$ things get interesting.
+  $x_2$ being in a ``later'' removed set than $R_i$, may have more zeros than $x_1$
+  in which case, $f(x_2)<f(x_1)$, and $f$ is not monotone.\\
+  Hence we see that $f$ is \textbf{not monotone}.
+\end{solution}
+\end{document}

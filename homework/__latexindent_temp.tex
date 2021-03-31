@@ -5,7 +5,7 @@
 \name{Rohit Wason}
 \course{Math 501}
 \term{Spring 2021}
-\hwnum{(\S5.1, Continuous Functions)}
+\hwnum{(\S5.4, Uniform Continuity)}
 
 \newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
 \newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
@@ -26,24 +26,9 @@
   \end{array}\right]
 }
 \problemnumber{14}
-\begin{problem}Given $A:=(0,\infty)$ and $k:A\to \mathbb{R}$
-  defined by
-  \[\begin{cases} 
-    0 & x \text{ irrational},\\
-    n & x \text{ rational of the form } $m/n$, \gcd{(m,n)}=1
-  \end{cases}\]
-  Prove that $k$ is unbounded on every open interval in $A$
-  and that it is not continuous anywhere in $A$.
+\begin{problem}Show that $f(x):=1/x^2$ is continuous on $A:=[1,\infty)$,
+  but that it is not so on $B:=(0,\infty)$.
 \end{problem}
 \begin{solution}Let $I:=(a,b)\subseteq{A}$ be an open interval. We find any two rationals 
-  $$p=\frac{m_1}{n_1}, q=\frac{m_2}{n_2} \in I$$ 
-  such that $\gcd{(n_1,n_2)}=1$. This is possible since, according to Density,
-  there are infinitely many rationals in $I$.\\
-  We take the the average of $p,q$ as
-  $$t=\frac{m_3}{n_1n_2}$$
-  Notice that $k(t)=n_1n_2$ which is greater than both $k(p)=n_1$ and $k(q)=n_2$.
-  In other words, no matter how large $k(p)$ or $k(q)$, 
-  we can find a larger $k(t)$ satisfying $p,q,t\in{I}$.\\
-  Since $I$ is arbitrary, we conclude that $k$ is \textbf{unbounded} in $A$.
 \end{solution}
 \end{document}

@@ -1,0 +1,54 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{listings}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S5.4, Uniform Continuity)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}
+
+\begin{document}
+
+\newenvironment{amatrix}[1]{%
+  \left[\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right]
+}
+
+\newenvironment{augmatrix}[1]{%
+  \left[\begin{array}{#1}
+}{%
+  \end{array}\right]
+}
+\problemnumber{2}
+\begin{problem}Show that $f(x):=1/x^2$ is uniformally continuous on $A:=[1,\infty)$,
+  but that it is not so on $B:=(0,\infty)$.
+\end{problem}
+\begin{solution}Let $x,u\in{A}$. The ratio $\abs{(f(x)-f(u))/(x-u)}$
+  \begin{align*}
+    = \abs{\frac{1/x^2-1/u^2}{x-u}}
+    &= \abs{\frac{u^2-x^2}{x^2u^2(x-u)}}\\
+    &= \abs{\frac{x+u}{x^2u^2}}\\
+    &= \frac{1}{x}\frac{1}{u^2} + \frac{1}{x^2u}
+  \end{align*}
+  Now since $x\ge{1}$, $1/x\le{1}$ and $1/x^2\le{1}$. The same can be established
+  for $u$. Therefore the above ratio
+  \begin{align*}
+    \abs{\frac{f(x)-f(u)}{x-u}} \le 2,
+  \end{align*}
+  which makes $f$ satisfy the \textbf{Lipschitz condition}. This also makes
+  it \textbf{uniformally continuous} on $A$.\\
+
+  In the case of $B:=(0,\infty)$, if we fix $\delta>0$ and set points $x_\delta=\delta/2\in{B}$
+  and $u_\delta=\delta/4\in{B}$ we  have that $\abs{x_\delta-u_\delta}=\delta/2<\delta$.\\
+  However the quantity $\abs{f(x_\delta)-f(u_\delta)}=\abs{4/\delta^2-16/\delta^2}=12/\delta^2$.\\
+  This means there exists $\epsilon_0=12/\delta^2$ such that $\abs{f(x_\delta)-f(u_\delta)}\ge{\epsilon_0}$
+  which is one of the \textbf{Nonuniform Continuity Criteria}. Hence $f$ is not uniformally
+  continuous on $B$.
+\end{solution}
+\end{document}

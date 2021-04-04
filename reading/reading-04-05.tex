@@ -1,0 +1,40 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{enumitem,amsmath,mathtools}
+\usepackage{fontspec}
+\usepackage{euler}
+
+\defaultfontfeatures{Ligatures=TeX}
+% \setmainfont[Ligatures=TeX,Scale=1.25]{[FountainPen.ttf]}
+
+\usepackage{titlesec}
+
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S{6.1} Differentials)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+\begin{document}
+\begin{problem}Are there functions $f,g$ (defined on the same interval) such that neither 
+  of them is constant, and $(fg)'= f'g'$.
+\end{problem}
+\begin{solution}For the given condition to be true,
+  \begin{align*}
+    (fg)'&=f'g'\\
+      fg'+gf'&=f'g'
+    &\text{(Product Rule)}\\
+    \frac{f}{f'}+\frac{g}{g'}&=1
+  \end{align*}
+  Intuitively, we see that $f,g$ could be some exponent functions
+  such that their ratios with their respective derivatives are constants
+  that add up to $1$.\\
+  In particular, choose $f=e^{2x/3}$ and $g=e^{x/3}$. Using the Chain Rule
+  we see that $f'=\frac{2}{3}f$ and $g'=\frac{1}{3}g$ and hence
+  $$\frac{f}{f'}+\frac{g}{g'}=1$$ or the required condition is satisfied.
+\end{solution}
+\end{document}

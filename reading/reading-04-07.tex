@@ -1,0 +1,36 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{enumitem,amsmath,mathtools}
+\usepackage{fontspec}
+\usepackage{euler}
+
+\defaultfontfeatures{Ligatures=TeX}
+% \setmainfont[Ligatures=TeX,Scale=1.25]{[FountainPen.ttf]}
+
+\usepackage{titlesec}
+
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S{6.2} MVT)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+\begin{document}
+\begin{problem}Prove that the function that has a strictly positive derivative
+  on an interval is strictly increasing.
+\end{problem}
+\begin{solution}Let $f:I\to\mathbb{R}$ have a derivative in $I$, $f'(x)>0$.
+  Let $x_1,x_2\in{I}$ satisfy $x_1<x_2$. Applying the Mean Value Theorem
+  to $f$ on $[x_1,x_2]$ we find $c\in{(x_1,x_2)}$ such that
+  $$f(x_2)-f(x_1)=f'(c)(x_2-x_1).$$
+  Since $f'(c)>0$ by hypothesis, and $x_2-x_1>0$, we have that
+  $$f(x_2)-f(x_1)>0.$$
+  In other words, $x_2>x_1 \implies f(x_2)>f(x_1)$, or that
+  $f$ is strictly increasing in $[x_1,x_2]$. Since $x_1,x_2$
+  are arbitrary, $f$ is strictly increasing in $I$.
+\end{solution}
+\end{document}

@@ -1,0 +1,81 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{listings}
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S6.1, Derivatives)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}
+
+\begin{document}
+
+\newenvironment{amatrix}[1]{%
+  \left[\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right]
+}
+
+\newenvironment{augmatrix}[1]{%
+  \left[\begin{array}{#1}
+}{%
+  \end{array}\right]
+}
+\problemnumber{12}
+\begin{problem}If $r>0$ is rational and $f:\mathbb{R} \to \mathbb{R}$:
+  $$f(x):= \begin{cases}
+    x^r\sin(1/x), & x\ne{0}\\
+    0, & x=0.
+  \end{cases}
+  $$
+  Determine those values of $r$ for which $f'(0)$ exists.
+\end{problem}
+\begin{solution}First consider $x^s, s=m/n \in \mathbb{Q}$.\\
+  When $x<0$, $\lim_{x\to{0^{-}}}x^s=0$
+  for $n$ odd, but does not exist for $n$ even
+  (\textbf{even roots} of negative numbers aren't real).
+  Therefore
+  \begin{equation}
+    \displaystyle{\lim_{x\to{0}}x^s}=
+    \begin{cases}
+      0, & n \text{ odd}\\
+      DNE, & n \text{ even.}
+    \end{cases}
+  \end{equation}
+  Now for $f'(0)$ to exist,
+  $
+    \lim_{x\to{0}}\frac{f(x)-f(0)}{x-0}
+    =\lim_{x\to{0}}\frac{f(x)}{x}
+  $
+  must exist (definition of Derivative).\\
+
+  For $x \ne 0$, using $-1 \le \sin(1/x) \le 1$ we can write
+  % $-\abs{x^r} \le f(x) \le \abs{x^r}$, 
+  $-\abs{x^{r-1}} \le f(x)/x \le \abs{x^{r-1}}$, or
+  \begin{equation}
+    -\abs{g(x)} \le \frac{f(x)}{x} \le \abs{g(x)}, \text{for } g(x):=x^{r-1}
+  \end{equation}
+
+  \textbf{\textit{Case I:} $0<r<1$.}\\
+  Let $s=1-r>0$, or $g(x)=x^s, s=m/n \in \mathbb{Q}$.
+  We know from $(12.1)$ that $\lim_{x\to{0}}g(x)=0$ 
+  is defined \textbf{only when $n$ is odd.}\\
+
+  \textbf{\textit{Case II:} $r \ge 1$.}\\
+  Let $s=r-1>0$, and $g(x)=x^s, s=m/n \in \mathbb{Q}$.
+  As above, $\lim_{x\to{0}}g(x)=0$ 
+  is defined \textbf{only when $n$ is odd.}\\
+
+  Hence all $r=m/n,$ $n$ odd, 
+  lead to $\lim_{x\to{0}}\abs{g(x)}
+    = -\lim_{x\to{0}}\abs{g(x)}$.
+  Using \textbf{Squeeze Theorem} and $(12.2)$ 
+  this is a sufficient condition for
+  $\displaystyle{\lim_{x\to{0}}\frac{f(x)}{x}}=0$
+  hence the existence of $f'(0)$.
+\end{solution}
+\end{document}

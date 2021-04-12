@@ -1,0 +1,48 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{enumitem,amsmath,mathtools}
+\usepackage{fontspec}
+\usepackage{euler}
+
+\defaultfontfeatures{Ligatures=TeX}
+% \setmainfont[Ligatures=TeX,Scale=1.25]{[FountainPen.ttf]}
+
+\usepackage{titlesec}
+
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S{6.2} MVT)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+\begin{document}
+\begin{problem}Prove that the sequence of
+  Iterated Cosine is convergent.
+\end{problem}
+\begin{solution}Iterated Cosine: $a_0=0; a_{n+1}=\cos{a_n}, n\ge{1}$.\\
+  In general $-1\le\cos{x}\le{1}$ but for $n>0$, $0<\cos{x}\le{1}$.
+  Hence for all $n\ge{0}$, $0 \le a_n \le 1$.\\
+
+  To show that the sequence is contractive, we should prove that there
+  exists a $0<C<1$ such that
+  $$\abs{\frac{a_{n+2}-a_{n+1}}{a_{n+1}-a_n}}\le{C}$$
+  
+  This is true for $n=0$ since
+  \begin{align*}
+    & \abs{\frac{a_2-a_1}{a_1-a_0}}\\
+    &= \abs{\frac{\cos{1}-1}{1-0}}\\
+    &= \abs{\cos{1}-1} \le \frac{1}{2}
+  \end{align*}
+
+  We claim that $C=1/2$ holds true for all $a_n$
+  and prove it by Induction.\\
+
+  SORRY, my mind isn't open today. But I do 
+  want to work on this, and the bonus questions
+  later.
+\end{solution}
+\end{document}

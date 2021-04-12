@@ -1,0 +1,46 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{enumitem,amsmath,mathtools}
+\usepackage{fontspec}
+\usepackage{euler}
+
+\defaultfontfeatures{Ligatures=TeX}
+% \setmainfont[Ligatures=TeX,Scale=1.25]{[FountainPen.ttf]}
+
+\usepackage{titlesec}
+
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S{6.3} L'Hospital's Rules)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+\begin{document}
+\begin{problem}Find $$\lim_{x\to\infty}(1+\frac{a}{x})^x.$$
+\end{problem}
+\begin{solution}
+  \begin{align*}
+    \text{Let } f(x)&=(1+\frac{a}{x})^x\\
+    &=e^{x\ln(1+\frac{a}{x})}\\
+    \text{However, } \lim_{x\to\infty}x\ln(1+\frac{a}{x})
+    &=\lim_{x\to\infty}\frac{\ln(1+a/x)}{1/x}
+      &\text{($\frac{0}{0}$ form)}\\
+    &=\lim_{x\to\infty}\frac{(\ln(1+a/x))'}{(1/x)'}
+      &\text{(L'Hospital Rule)}\\
+    &=\lim_{x\to\infty}\frac
+      {\frac{1}{1+a/x}(-a/x^2)}
+      {-1/x^2}
+      &\text{(Chain Rule)}\\
+    &=\lim_{x\to\infty}\frac{a}{1+a/x}\\
+    &=a\\
+    \therefore
+    \lim_{x\to\infty}f(x)
+    &=e^a
+    &\text{(since $e^x$ is continuous everywhere)}.
+  \end{align*}
+\end{solution}
+\end{document}

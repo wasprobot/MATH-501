@@ -1,0 +1,39 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{enumitem,amsmath,mathtools}
+\usepackage{fontspec}
+\usepackage{euler}
+
+\defaultfontfeatures{Ligatures=TeX}
+% \setmainfont[Ligatures=TeX,Scale=1.25]{[FountainPen.ttf]}
+
+\usepackage{titlesec}
+
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S{6.4} Taylor's Theorem)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+\begin{document}
+\begin{problem}Show that $e^x>1+x$ for $x>0$.
+\end{problem}
+\begin{solution}Let $I=(0,\infty]$ and $f(x)=e^x$ defined on $I\to{\mathbb{R}}$.
+  Since $f^{(k)}(x)=e^x$ are all continuous and diffable on $I$, Taylor's Theorem
+  states that $f(x)=P_1{x}+R_1{x}$ (for $n=1$).\\
+
+  Choose $x_0=0$, yielding
+  \begin{align*}
+    P_1(x)&=e^0+e^0x=1+x\\
+    R_1(x)&=\frac{e^c}{2!}x^2.
+  \end{align*}
+
+  Since, $x>0$ by definition, $0=x_0<c<x$. Or
+  $e^c>0$ and $R_1(x)>0$
+  impling that $f(x)>1+x$.
+\end{solution}
+\end{document}

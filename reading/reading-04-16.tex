@@ -1,0 +1,34 @@
+\documentclass[boxes, qed]{homework}
+\usepackage{enumitem,amsmath,mathtools}
+\usepackage{fontspec}
+\usepackage{euler}
+
+\defaultfontfeatures{Ligatures=TeX}
+% \setmainfont[Ligatures=TeX,Scale=1.25]{[FountainPen.ttf]}
+
+\usepackage{titlesec}
+
+\name{Rohit Wason}
+\course{Math 501}
+\term{Spring 2021}
+\hwnum{(\S{6.4} Taylor's Theorem)}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+\newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+\begin{document}
+\begin{problem}Show where Newton's method of finding roots fails.
+\end{problem}
+\begin{solution}Let $f(x):=\sin{x}$. If we pick $I:=[\pi/2, 3\pi/2]$,
+  since $f'(x)=\cos{x}$, it is possible to pick a subinterval $I^* \subset I$ such that
+  $\abs{f'(x)}>m=1/2$.\\
+  Similarly since $f''(x)=-\sin{x}$ and $\abs{f''(x)}\le M=1$, we can set $K=\frac{M}{2m}=1$.
+  If we define a sequence $x_n$ such that:
+  $$x_{n+1}:=x_n-\frac{f(x_n)}{f'(x_n)}=x_n-\tan{x_n},$$
+  we see that since the value of $\tan{x}$ goes to $\infty$ in $I$
+  $x_n$ does not converge.
+\end{solution}
+\end{document}
